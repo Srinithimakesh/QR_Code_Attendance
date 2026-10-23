@@ -67,3 +67,4 @@ QR_Code_Attendance_System_English/
 - The SQLite database file `attendance.db` is created automatically when the app starts.
 - This is a student project suitable for local demonstrations. Add authentication, stronger secret management, and deployment security before using it for real institutional records.
 - The QR code opens the attendance form; it does not itself verify a student's identity.
+"# QR_Code_Attendance" 
