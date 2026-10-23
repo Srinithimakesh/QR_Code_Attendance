@@ -1,0 +1,55 @@
+:root { --navy: #172554; --blue: #3157d5; --bg: #f4f7fb; --text: #172033; --muted: #667085; --line: #e4e9f2; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Arial, Helvetica, sans-serif; }
+.topbar { background: #fff; border-bottom: 1px solid var(--line); min-height: 72px; padding: 0 6%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { color: var(--navy); font-weight: 800; font-size: 1.2rem; text-decoration: none; }
+nav { display: flex; gap: 22px; flex-wrap: wrap; }
+nav a { text-decoration: none; color: #475467; font-weight: 600; font-size: .94rem; }
+nav a:hover, .panel-heading a { color: var(--blue); }
+.container { width: min(1100px, 90%); margin: 36px auto 60px; }
+.hero { display: grid; grid-template-columns: 1fr 280px; gap: 28px; align-items: center; background: linear-gradient(135deg, #fff, #edf2ff); border: 1px solid var(--line); border-radius: 22px; padding: 36px; }
+h1 { margin: 6px 0 12px; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--navy); }
+h2 { margin: 0; font-size: 1.25rem; }
+p { line-height: 1.6; }
+.eyebrow { color: var(--blue); font-size: .75rem; font-weight: 800; letter-spacing: .13em; }
+.muted { color: var(--muted); }
+.button { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 10px; padding: 12px 18px; background: var(--blue); color: white; text-decoration: none; font-weight: 700; cursor: pointer; font-size: .95rem; }
+.button:hover { filter: brightness(.94); }
+.button.secondary { background: #e9edf5; color: var(--navy); }
+.qr-card { background: #fff; padding: 18px; border-radius: 16px; text-align: center; box-shadow: 0 8px 25px #17255410; }
+.qr-image { width: 190px; max-width: 100%; display: block; margin: auto; }
+.qr-card p { margin-bottom: 0; font-weight: 700; font-size: .9rem; }
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 22px 0; }
+.stat-card, .panel, .form-panel { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+.stat-card span { display: block; color: var(--muted); font-weight: 600; }
+.stat-card strong { display: block; margin-top: 8px; color: var(--navy); font-size: 2rem; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.panel-heading a { text-decoration: none; font-weight: 700; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; min-width: 650px; }
+th, td { padding: 14px 12px; border-bottom: 1px solid var(--line); font-size: .92rem; }
+th { color: #475467; background: #f8faff; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+.empty { color: var(--muted); background: #f8faff; padding: 18px; border-radius: 10px; }
+.form-panel { max-width: 620px; margin: 0 auto; padding: 34px; }
+.attendance-form { display: grid; gap: 10px; margin-top: 24px; }
+label { font-weight: 700; margin-top: 8px; }
+input { width: 100%; border: 1px solid #d0d7e4; border-radius: 10px; padding: 13px 14px; font: inherit; background: #fff; }
+input:focus { outline: 2px solid #c7d2fe; border-color: var(--blue); }
+.attendance-form .button { margin-top: 12px; }
+.search-form { display: flex; gap: 10px; margin-bottom: 22px; }
+.search-form input { flex: 1; min-width: 140px; }
+.alert { border-radius: 10px; padding: 13px 16px; margin-bottom: 16px; font-weight: 600; }
+.alert.success { background: #e8f8ee; color: #17663a; }
+.alert.error { background: #fff0f0; color: #a32626; }
+footer { text-align: center; padding: 24px; color: var(--muted); border-top: 1px solid var(--line); background: #fff; font-size: .85rem; }
+@media (max-width: 720px) {
+  .topbar { padding: 18px 5%; align-items: flex-start; flex-direction: column; }
+  nav { gap: 14px; }
+  .container { width: 92%; margin-top: 22px; }
+  .hero { grid-template-columns: 1fr; padding: 24px; }
+  .qr-card { max-width: 280px; }
+  .stats { grid-template-columns: 1fr; }
+  .form-panel, .panel { padding: 20px; }
+  .search-form { flex-wrap: wrap; }
+  .search-form input { flex-basis: 100%; }
+}

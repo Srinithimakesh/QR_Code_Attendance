@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | QR Attendance{% endblock %}
+{% block content %}
+<head>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<section class="hero">
+  <div>
+    <p class="eyebrow">STUDENT ATTENDANCE MANAGEMENT</p>
+    <h1>Attendance Dashboard</h1>
+    <p class="muted">Use the QR code to open the student attendance form.</p>
+    <a class="button" href="{{ url_for('attendance') }}">View All Records</a>
+  </div>
+  <div class="qr-card">
+    <img class="qr-image" src="data:image/png;base64,{{ qr_image }}" alt="Attendance QR code">
+    <p>Scan to mark attendance</p>
+  </div>
+</section>
+<section class="stats">
+  <div class="stat-card"><span>Total Records</span><strong>{{ total }}</strong></div>
+  <div class="stat-card"><span>Today's Attendance</span><strong>{{ today_total }}</strong></div>
+</section>
+<section class="panel">
+  <div class="panel-heading"><h2>Recent Attendance</h2><a href="{{ url_for('attendance') }}">See all</a></div>
+  {% if recent %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Student Name</th><th>Register Number</th><th>Course</th><th>Date</th><th>Time</th></tr></thead>
+    <tbody>{% for row in recent %}
+      <tr><td>{{ row.student_name }}</td><td>{{ row.register_number }}</td><td>{{ row.course }}</td><td>{{ row.attendance_date }}</td><td>{{ row.attendance_time }}</td></tr>
+    {% endfor %}</tbody>
+  </table></div>
+  {% else %}
+    <p class="empty">No attendance records yet. Scan the QR code or use the Mark Attendance page to add the first record.</p>
+  {% endif %}
+</section>
+{% endblock %}

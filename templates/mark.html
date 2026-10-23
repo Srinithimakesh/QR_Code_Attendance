@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Mark Attendance | QR Attendance{% endblock %}
+{% block content %}
+<section class="form-panel">
+  <p class="eyebrow">STUDENT FORM</p>
+  <h1>Mark Your Attendance</h1>
+  <p class="muted">Enter your details carefully. Attendance can be recorded once per day for each register number.</p>
+  <form method="post" class="attendance-form">
+    <label for="student_name">Student Name</label>
+    <input id="student_name" name="student_name" type="text" placeholder="Enter your full name" required>
+    <label for="register_number">Register Number</label>
+    <input id="register_number" name="register_number" type="text" placeholder="Enter your register number" required>
+    <label for="course">Course / Department</label>
+    <input id="course" name="course" type="text" placeholder="Example: BCA" required>
+    <button class="button" type="submit">Submit Attendance</button>
+  </form>
+</section>
+{% endblock %}
